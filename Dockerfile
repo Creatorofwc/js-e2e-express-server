@@ -1,4 +1,5 @@
 FROM node:16
-COPY . .
-WORKDIR .
-CMD npm install && npm run build
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+RUN npm install && npm run build
