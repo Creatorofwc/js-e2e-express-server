@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-js-deployment
+  labels:
+    app: node-js
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-js
+  template:
+    metadata:
+      labels:
+        app: node-js
+    spec:
+      containers:
+        - name: node-js
+          image: braindevopstraining.azurecr.io/node_js
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
