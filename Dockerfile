@@ -1,5 +1,8 @@
 FROM node:16
 RUN mkdir /app
-COPY . /app
 WORKDIR /app
-RUN npm install && npm run build
+COPY package.json /app
+RUN npm install
+COPY . /app
+EXPOSE 3000
+CMD ["npm", "start"]
