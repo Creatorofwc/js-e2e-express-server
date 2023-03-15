@@ -20,5 +20,6 @@ spec:
           image: braindevopstraining.azurecr.io/node_js
           ports:
             - containerPort: 3000
+      imagePullPolicy: Always
       imagePullSecrets:
         - name: devopsrepo
